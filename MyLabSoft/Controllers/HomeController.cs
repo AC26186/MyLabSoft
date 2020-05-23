@@ -13,16 +13,22 @@ namespace MyLabSoft.Controllers
     {
         // GET: api/Home
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Product> Get()
         {
-            return new string[] { "value1", "value2" , "value3" };
+            DataAccessLayer obj = new DataAccessLayer();
+            var productlist = obj.GetProducts();
+
+            return productlist;
         }
 
         // GET: api/Home/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public IEnumerable<Product> Get(int id)
         {
-            return "value";
+            DataAccessLayer obj = new DataAccessLayer();
+            var productlist = obj.GetProducts();
+            var result = from word in productlist where word.ProductID ==id select word;
+            return result;
         }
 
         // POST: api/Home
