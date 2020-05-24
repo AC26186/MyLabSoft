@@ -29,8 +29,7 @@ namespace MyLabSoft
                         {
                             ProductID = reader["ProductID"] != DBNull.Value ? Convert.ToInt32(reader["ProductID"].ToString()) : -0b1,
                             ProductName = reader["ProductName"] != DBNull.Value ? reader["ProductName"].ToString() : string.Empty,
-                            ProductCode = reader["IsourceCatalogId"] != DBNull.Value ? reader["IsourceCatalogId"].ToString() : string.Empty,
-                            WorkSheetName = reader["WorkSheetName"] != DBNull.Value ? reader["WorkSheetName"].ToString() : string.Empty,
+                            ProductCode = reader["ProductCode"] != DBNull.Value ? reader["ProductCode"].ToString() : string.Empty,
                             IsActive = reader["IsActive"] != DBNull.Value ? (bool)reader["IsActive"] : false,
                             CreateId = reader["CreateId"] != DBNull.Value ? reader["CreateId"].ToString() : string.Empty,
                             CreateDate = reader["CreateDate"] != DBNull.Value ? (DateTime)reader["CreateDate"] : DateTime.Now,
