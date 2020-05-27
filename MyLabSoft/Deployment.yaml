@@ -1,0 +1,19 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: mylabsoft-deployment
+spec: 
+  selector:
+   matchLabels:
+    app: mylabsoft-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mylabsoft-pod
+    spec: 
+      containers: 
+       - name: mylabsoft-container
+         image: ac26186/mylabsoft:latest
+         ports:
+           - containerPort: 80

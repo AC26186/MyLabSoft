@@ -1,0 +1,13 @@
+﻿kind: Service
+apiVersion: v1
+metadata: 
+  name: mylabsoft-service
+spec: 
+  type: LoadBalancer
+  selector: 
+    app: mylabsoft-pod
+
+  ports: 
+   - nodePort: 30163
+     port: 8071
+     targetPort: 80
